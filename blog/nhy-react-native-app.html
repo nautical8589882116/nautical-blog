@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="canonical" href="https://www.nautical.co.in/blog/nhy-react-native-app.html" />
+<meta name="robots" content="index,follow" />
+<meta name="description" content="How the Nautical NHY React Native app turns a printed menu, a waiting table, a stock surprise, and a missing product photo into an AI menu builder, QR ordering, order pipeline, and retail inventory — for restaurants, cafés, bars, and shops." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet" />
+<title>NHY on your phone: the React Native app that runs the floor</title>
+<style>
+:root{--navy:#0B2545;--deep:#061A33;--teal:#17C3CE;--soft:#E6FAFB;--ink:#1F2933;--slate:#5A6B7B;--sand:#F7F9FB;--amber:#F6A609;--paper:#FFFFFF}
+*{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);overflow-x:hidden}
+body{font-family:Inter,-apple-system,Segoe UI,sans-serif;font-size:18px;line-height:1.7}
+a{color:var(--teal)}.wrap{max-width:760px;margin:0 auto;padding:0 22px}
+.hero{background:var(--navy);color:#fff;padding:72px 0 64px}.mark{font-size:28px}
+.kicker{color:var(--teal);font-family:Sora,Segoe UI,system-ui,sans-serif;font-weight:600;font-size:13px;letter-spacing:.16em;text-transform:uppercase;margin:18px 0 10px}
+h1{font-family:Sora,Segoe UI,system-ui,sans-serif;font-weight:700;letter-spacing:-.03em;font-size:clamp(32px,5vw,48px);line-height:1.12;margin:0 0 16px}
+.deck{color:var(--teal);font-size:20px;line-height:1.45;margin:0;max-width:36em}
+section{padding:48px 0}section.sand{background:var(--sand)}
+h2{font-family:Sora,Segoe UI,system-ui,sans-serif;font-weight:600;letter-spacing:-.02em;color:var(--navy);font-size:28px;line-height:1.25;margin:0 0 14px}
+h3{font-family:Sora,Segoe UI,system-ui,sans-serif;font-weight:600;color:var(--navy);font-size:18px;margin:22px 0 6px}
+p{margin:0 0 16px}
+.quote{background:var(--soft);border-left:4px solid var(--teal);padding:28px 28px 22px;margin:8px 0 4px}
+.quote p{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:clamp(26px,4vw,32px);line-height:1.35;color:var(--navy);margin:0}
+.quote span{display:block;margin-top:12px;font-family:Inter,-apple-system,Segoe UI,sans-serif;font-style:normal;font-size:14px;color:var(--slate)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px}
+.card{border:1.5px solid var(--teal);border-radius:12px;padding:16px 14px;background:#fff}
+.card strong{display:block;font-family:Sora,Segoe UI,system-ui,sans-serif;color:var(--navy);font-size:22px}
+.card strong em{color:var(--amber);font-style:normal}
+.card span{display:block;margin-top:6px;color:var(--slate);font-size:14px}
+.shot{border:1.5px dashed var(--teal);border-radius:12px;background:var(--sand);padding:18px;margin:18px 0 8px}
+.shot .brief{font-size:15px;margin:0 0 8px}.shot .meta{font-size:13px;color:var(--slate);margin:0}.shot .meta b{color:var(--navy)}
+.caption{font-size:13px;color:var(--slate);margin:-4px 0 18px}
+.cta{background:var(--deep);color:#fff;padding:64px 0;text-align:center}.cta h2{color:#fff;font-size:clamp(28px,4vw,36px)}
+.cta p{color:#d5e2ee;max-width:36em;margin:0 auto 22px}
+.btn{display:inline-block;background:var(--teal);color:var(--deep);text-decoration:none;font-family:Sora,Segoe UI,system-ui,sans-serif;font-weight:700;padding:14px 22px;border-radius:999px}
+footer{background:var(--navy);color:#9fb0c3;font-size:13px;padding:22px 0 28px}
+@media(max-width:640px){.cards{grid-template-columns:1fr}.hero{padding:48px 0 40px}section{padding:36px 0}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap"><div class="mark">⚓</div>
+<p class="kicker">Nautical · NHY React Native app</p>
+<h1>The menu is still on paper. The table is still waiting. The stock already ran out.</h1>
+<p class="deck">Tap Tap Go. ⚓ Order in 3 Seconds. — how NHY puts the floor on one phone, for restaurants, cafés, bars, and shops.</p>
+</div></header>
+<section><div class="wrap">
+<p>Sunday service, and the printed menu in the folder does not match the board. Someone has to retype every category, price, and “not available after 11” note into whatever system is open that week. At table four, a guest has been trying to catch a server’s eye for the better part of ten minutes. Mid-shift, the pastry case — or the bottle shelf, or the size that actually sells — is empty, and nobody saw it coming. The product photo that was supposed to go on the special never got taken.</p>
+<p>That is the same afternoon in a café, a bar, a restaurant, and a retail counter. Different goods. Same gap between what the room is doing and what the owner can see. NHY is the React Native app inside Nautical POS: one owner console on the phone, and a guest menu that opens in the browser. No second app for the person at the table.</p>
+</div></section>
+<section class="sand"><div class="wrap">
+<h2>Stop retyping the printed menu</h2>
+<p>An AI menu builder is not a slogan here. In NHY you build categories with a colour and an image, then items with a price, calories, and flags for veg, spicy, and featured. Each item can be available for Breakfast, Lunch, or Dinner, so the morning card does not keep selling a dinner plate at 9 a.m.</p>
+<p>If the menu already exists on paper, Import from photo reads a picture of that printed menu and builds the categories and items for you. A retail catalogue does not need a photo of a card: Shopify CSV import brings the shop list in. The same screen also carries catalogue profiles — restaurant, café, bar and pub, retail shop, grocery, and others — so the fields match the counter, not a generic form.</p>
+<div class="shot"><p class="brief"><b>Image brief.</b> Phone screenshot of the NHY Menu Builder: Import (AI), Add Category, catalogue chips, category list.</p>
+<p class="meta"><b>Alt text.</b> NHY Menu Builder showing AI import and catalogue profiles.</p>
+<p class="meta"><b>Suggested caption.</b> Categories, flags, and meal-time availability — built once, or read from a photo.</p></div>
+<p class="caption">Shoot on a phone in portrait, Menu Builder scrolled to categories.</p>
+<h3>Same builder, four counters</h3>
+<p>A restaurant owner uses meal windows so lunch specials drop off before dinner. A café owner flags the featured pastry. A bar manager marks spicy wings. A shop owner imports the catalogue and uses the same item card for price and availability.</p>
+</div></section>
+<section><div class="wrap">
+<h2>The table should not have to wave</h2>
+<p>Contactless ordering means a QR code on the table. The guest opens the phone camera, scans, and lands on a web menu. There is no app to download. They pick a portion — Quarter, Half, or Full — apply a coupon, and see a live summary: subtotal, service charge, tax, and discount.</p>
+<p>That QR code ordering system is the same at a café counter, a bar high-top, and a shop rail. Restaurant POS software usually stops at the till. NHY starts at the table.</p>
+<div class="shot"><p class="brief"><b>Image brief.</b> Table tent with Nautical QR and guest web menu with portion sizes and live total.</p>
+<p class="meta"><b>Alt text.</b> Guest scanning table QR and reviewing web menu total before sending the order.</p>
+<p class="meta"><b>Suggested caption.</b> Scan with the camera. No download. The total is visible before the order leaves the table.</p></div>
+</div></section>
+<section class="sand"><div class="wrap"><div class="quote">
+<p>The order is not finished when it is taken. It is finished when it has moved, been receipted, and can be found again.</p>
+<span>From the floor, not from a brochure.</span>
+</div></div></section>
+<section><div class="wrap">
+<h2>Pending, preparing, ready, done</h2>
+<p>The order pipeline is four states: Pending, Preparing, Ready, Completed. Filter by date, table, payment method, and status. Send the receipt from the order.</p>
+<p>On the dashboard, today’s revenue, orders, and average order value sit above recent tickets. Billing, team accounts, and store settings live in the same deck.</p>
+<div class="cards">
+<div class="card"><strong>4 states</strong><span>Pending → Preparing → Ready → Completed.</span></div>
+<div class="card"><strong>No download</strong><span>Guests scan a table QR and order on the web menu.</span></div>
+<div class="card"><strong><em>3</em> dayparts</strong><span>Breakfast, Lunch, Dinner availability.</span></div>
+</div>
+</div></section>
+<section class="sand"><div class="wrap">
+<h2>Find the empty shelf before the guest does</h2>
+<p>NHY keeps food stock and retail stock, raises low-stock alerts, and supports purchase orders and transfers between locations.</p>
+<p>For a restaurant: a prep item before dinner. For a café: milk and the featured pastry. For a bar: the bottle for the next round. For a shop: the size that transfers from the other location.</p>
+</div></section>
+<section><div class="wrap">
+<h2>The photo that never got taken</h2>
+<p>AI Marketing Studio sits on the same home screen. AI Trial Lab makes product mockups. The app can generate a video ad for an item you already sell. AI try-on is there for products a guest would want to see on themselves.</p>
+<p>Plans run from a free tier up to Enterprise. NHY is restaurant POS software when you are plating, a QR code ordering system when the room is full, and a retail inventory management app when the goods are on a shelf.</p>
+</div></section>
+<section class="cta"><div class="wrap">
+<h2>Run the next shift from NHY.</h2>
+<p>Open the owner console, build or import the menu, and put a table QR down. Tap Tap Go. ⚓ Order in 3 Seconds.</p>
+<a class="btn" href="https://app.nautical.co.in/">Try Nautical POS</a>
+</div></section>
+<footer><div class="wrap">Nautical POS · www.nautical.co.in · app.nautical.co.in · NHY React Native owner console.</div></footer>
+</body>
+</html>
