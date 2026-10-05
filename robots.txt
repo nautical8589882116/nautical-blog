@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.nautical.co.in/sitemap.xml
+Sitemap: https://nautical-blog.netlify.app/sitemap.xml
