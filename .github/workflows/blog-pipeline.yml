@@ -1,0 +1,58 @@
+# Blog pipeline — runs on every push to main.
+#
+# What it does automatically:
+#   1. Regenerates blog/index.html from the manifest (blog/posts.json) so every
+#      post is timestamped, tagged, and linked — newest first.
+#   2. Regenerates sitemap.xml from the same manifest.
+#   3. Commits the regenerated files back to main (so the index is always
+#      current without manual editing).
+#   4. Netlify auto-deploys the site from this repo (see netlify.toml).
+#   5. Google Search Console indexing is NOT automatic — see AUTOMATION.md.
+#      Google does not allow unattended URL submission; the runbook covers the
+#      one-time setup (property + sitemap submit) and the per-post request.
+#
+# To add a future post: research it, write blog/<slug>.html with the Nautical
+# design system, add one entry to blog/posts.json, push to main. The pipeline
+# handles the rest.
+name: Blog pipeline
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'blog/**'
+      - 'blog/posts.json'
+      - '.github/workflows/blog-pipeline.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.BLOG_PUSH_TOKEN || secrets.GH_TOKEN || github.token}}
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Regenerate index and sitemap from manifest
+        run: node .github/scripts/generate-blog.js
+
+      - name: Commit regenerated files
+        run: |
+          git config user.name "nautical-blog-bot"
+          git config user.email "bot@nautical.co.in"
+          git add blog/index.html sitemap.xml
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore(blog): regenerate index and sitemap [skip ci]"
+            git push
+          fi

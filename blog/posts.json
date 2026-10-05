@@ -1,0 +1,24 @@
+[
+  {
+    "slug": "nhy-react-native-app",
+    "title": "NHY on your phone: the React Native app that runs the floor",
+    "date": "2026-10-04",
+    "dateDisplay": "4 October 2026",
+    "tag": "NHY · React Native",
+    "excerpt": "Pain-first guide to the owner console: AI menu builder and photo import, table QR ordering with no guest app, order pipeline, inventory alerts, and AI Marketing Studio — for restaurants, cafés, bars, and retail shops.",
+    "differs": "Full NHY product walkthrough from the live Professional demo, not a single-feature story.",
+    "canonical": "https://www.nautical.co.in/blog/nhy-react-native-app.html"
+  },
+  {
+    "slug": "qr-ordering-restaurant-os",
+    "title": "How NHY turns table QR ordering into a live restaurant OS",
+    "date": "2026-08-27",
+    "dateDisplay": "27 August 2026",
+    "tag": "QR ordering",
+    "excerpt": "Demo-style story of a table scan becoming a live signal across menu, kitchen, payments, and demand — aimed at cafés, QSR, bakery, food court, and retail counters.",
+    "differs": "Narrative of one QR order end-to-end; lives on the public site at nautical.co.in/blog.",
+    "external": true,
+    "url": "https://www.nautical.co.in/blog",
+    "canonical": "https://www.nautical.co.in/blog"
+  }
+]
